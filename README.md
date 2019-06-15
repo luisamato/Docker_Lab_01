@@ -78,4 +78,21 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
 ````
 
-## 1. Construir la imagen
+## Construyamos la imágen y corramos un contenedor
+
+Primero vamos al directorio *imagen*
+
+`cd imagen`
+
+Con el comando build construimos la imágen. El -t indica que tag le queremos poner.
+
+`docker build -t primer_ejemplo:0.1 .`
+
+Una vez que la imágen ya está construida, ya podemos correr un container de esa imágen.
+
+`docker run -p 80:80 --name primer_ejemplo_container primer_ejemplo:0.1`
+
+¿Y todas esas opciones?
+Suponiendo que ya está todo, ¿cómo veo la página de saludo.php en mi browser?
+
+## Referencias
