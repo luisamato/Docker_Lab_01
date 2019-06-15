@@ -96,8 +96,31 @@ Ejecutamos el siguiente comando para armar la imagen
 ```bash
 #docker build -t primer_imagen_luis:01 .
 ````
-
+## 2 . Ejecutamos
 ### Ejecutamos el container
 ```bash
 #docker run -p 8000:80 --name primer_container_luis primer_imagen_luis:01
 ````
+
+### Probamos
+Con cualquier browser nos dirigimos a 
+http://IP_DEL_HOST:8000
+
+
+---
+## 3. Subimos a docker hub
+### Subimos el container a docker hub
+```bash
+#docker login
+````
+Le damos un tag a la imagen recien creada 
+```
+#docker tag  bb38976d03cf yourhubusername/verse_gapminder:firsttry
+```
+**bb38976d03cf** es el id de la imagen\
+**yourhubusername** de dockerhub\
+**verse_gapminder:firsttry** el nombre de la imagen
+
+Referencia : https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+
+----
