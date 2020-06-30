@@ -1,26 +1,29 @@
 # Docker_Lab_01 - Creamos una imagen y la corremos
 
-Este es un laboratorio introductorio en el cual crearemos una imagen y luego la ejecutaremos
-La finalidad es que el estudiante comprende como armar una imgaen y ejecutarla
+Este es un laboratorio introductorio crearemos una imagen y luego la ejecutaremos
+La finalidad es que el estudiante comprenda como armar una imgaen y ejecutarla
 
-## Iniciando el laboratorio
+## 1) Iniciando el laboratorio
 
 Ingresamos en la VM que contiene instalado Docker. La IP a sido brindada por su instructor. 
 
 ```bash
-ssh ip_virtual@docker1
+ssh ip_virtual@alumno
 ```
 ----
-Datos para ingresar 
+### Datos para ingresar 
 
-username  docker1\
-passwword docker1
-
+username  **alumno \
+passwword 
+```bash
 sudo -i 
+cd Documentos
+git clone https://github.com/luisamato/Docker_Lab_01
+```
 
 ---
 
-### Dockerfile
+## 2 Dockerfile
 
 Este es un archivo que define como se crea una imagen
 
@@ -86,7 +89,7 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
 ````
 
-## 1. Construimos la imagen
+## 3. Construimos la imagen
 ### Miramos los archivos del directorio
 ```bash
 #ls
@@ -96,7 +99,7 @@ Ejecutamos el siguiente comando para armar la imagen
 ```bash
 #docker build -t primer_imagen_luis:01 .
 ````
-## 2 . Ejecutamos
+## 4. Ejecutamos
 ### Ejecutamos el container
 ```bash
 #docker run -p 8000:80 --name primer_container_luis primer_imagen_luis:01
@@ -108,7 +111,7 @@ http://IP_DEL_HOST:8000
 
 
 ---
-## 3. Subimos a docker hub
+## 5. Subimos a docker hub
 ### Subimos el container a docker hub
 ```bash
 #docker login
